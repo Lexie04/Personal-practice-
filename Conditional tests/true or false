@@ -1,0 +1,16 @@
+x, y = 10, 20
+print(x < 15 and y < 15) # True
+print(x > 15 or y > 15)  # True
+print(not x == 10)       #False 
+
+
+fruits = ["apple", "banana","cherry"]
+print("banana" in fruits)  #True
+print ("mango" in fruits)  #False
+
+a = [1,2,3]
+b = a
+c = [2,3,4]
+print (a is b)   #True
+print (a is c )  #False
+print (a is not c )  #False
