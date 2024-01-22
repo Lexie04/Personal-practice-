@@ -1,0 +1,5 @@
+import os
+import img2pdf
+
+with open("test.pdf", "wb") as file:
+    file.write(img2pdf.convert([i for i in os.listdir("文件路径") if i.endswith(".jpg")]))
