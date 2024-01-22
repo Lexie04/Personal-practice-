@@ -1,0 +1,13 @@
+def watermark_Image(img_path, output_path, text, pos):
+    image = Image.open(img_path)
+    drawing = ImageDraw.Draw(image)
+    black = (10, 5, 12)
+    font_size = 50
+    font = ImageFont.truetype('Arial.ttf', font_size)
+    drawing.text(pos, text, font=font, fill=black)
+    image.show()
+    image.save(output_path)
+
+
+img = 'source.jpeg'
+watermark_Image(img, 'watermarked.jpeg', 'Python', pos=(100, 100))
