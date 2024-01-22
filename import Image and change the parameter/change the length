@@ -1,0 +1,7 @@
+def img_resize(file, height, width):
+    img = Image.open(file)
+    resize = img.resize((height, width), )
+    resize.save("resized.jpg", "JPEG", quality=100)
+
+
+img_resize("source.jpeg", 100, 100)
