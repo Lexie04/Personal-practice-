@@ -1,0 +1,9 @@
+import emoji
+
+result = emoji.emojize('Python is :thumbs_up:')
+print(result)
+# Python is  
+
+result2 = emoji.demojize('Python is  ')
+print(result2)
+# Python is :partying_face:
