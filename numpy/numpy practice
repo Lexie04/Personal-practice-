@@ -1,0 +1,56 @@
+import numpy as np 
+
+a = np.array([1,2,3])                    # 一维数组
+b = np.array([[1,2,3]])                  # 二维数组
+c = np.array([[1,2,3],[4,5,6]])          # 二维数组
+d = np.array([[1,2,3],[4,5,6],[7,8,9]])  # 二维数组
+e = np.array([[[1,2,3]]])                # 三维数组
+f = np.array([[[1,2,3],[4,5,6]]])        # 三维数组
+g = np.array([[[1,2,3]],[[4,5,6]]])      # 三维数组
+h = np.array([[[1,2,3],[4,5,6]],[[7,8,9]
+,[10,11,12]],[[13,14,15],[16,17,18]]])   # 三维数组
+
+# 查看数组的尺寸，其返回的是一个元组
+print(a.shape) 
+print(b.shape)
+print(c.shape)
+print(d.shape)
+print(e.shape)
+print(f.shape)
+print(g.shape)
+print(h)
+print(h.shape)
+
+# 查看对象的类型
+print(type(a))
+
+# 查看数组的基础属性
+print(a.itemsize)
+print(a.dtype)
+print(a.size)
+print(a.ndim)
+print(b.ndim)
+print(h.ndim)
+(3,)
+(1, 3)
+(2, 3)
+(3, 3)
+(1, 1, 3)
+(1, 2, 3)
+(2, 1, 3)
+[[[ 1  2  3]
+  [ 4  5  6]]
+
+ [[ 7  8  9]
+  [10 11 12]]
+
+ [[13 14 15]
+  [16 17 18]]]
+(3, 2, 3)
+<class 'numpy.ndarray'>
+8
+int64
+3
+1
+2
+3
