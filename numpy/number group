@@ -1,0 +1,14 @@
+n = 100                         # 样本个数
+x = np.linspace(1, 100, n)      # 样本的横坐标
+y = np.linspace(1, 100, n)      # 样本的纵坐标
+
+dist = np.zeros([n,n])
+
+# 计算欧式距离
+for i in range(n):
+    for j in range(n):
+        dist[i,j] = np.sqrt((x[i] - x[j])**2 + (y[i] - y[j])**2)
+
+print(x)
+print(y)
+print(dist)
