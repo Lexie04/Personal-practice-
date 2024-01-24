@@ -1,0 +1,57 @@
+def morse_translator(text):
+    # Morse code mapping
+    morse_code_dict = {
+        "A": ".-",
+        "B": "-...",
+        "C": "-.-.",
+        "D": "-..",
+        "E": ".",
+        "F": "..-.",
+        "G": "--.",
+        "H": "....",
+        "I": "..",
+        "J": ".---",
+        "K": "-.-",
+        "L": ".-..",
+        "M": "--",
+        "N": "-.",
+        "O": "---",
+        "P": ".--.",
+        "Q": "--.-",
+        "R": ".-.",
+        "S": "...",
+        "T": "-",
+        "U": "..-",
+        "V": "...-",
+        "W": ".--",
+        "X": "-..-",
+        "Y": "-.--",
+        "Z": "--..",
+    }
+    morse_code = ''
+    for char in text.upper():
+        if char == ' ':
+            morse_code += ' '
+        elif char in morse_code_dict:
+            morse_code += morse_code_dict[char]+' '
+        else :
+            morse_code += char
+    return morse_code.strip()
+
+text_to_translate = "Hello world"
+translated_text = morse_translator(text_to_translate)
+print(f"{text_to_translate} in Morse_code is : {translated_text}")
+    # Your code goes here
+    # Remember to consider both upper and lower case letters, and spaces
+    # The function should return the translated Morse code string
+
+
+
+# Test cases
+print(
+    morse_translator("HELLO WORLD")
+)  # Expected output: ".... . .-.. .-.. --- / .-- --- .-. .-.. -.."
+print(morse_translator("Python"))  # Expected output: ".--. -.-- - .... --- -."
+print(
+    morse_translator("Morse Code")
+)  # Expected output: "-- --- .-. ... . / -.-. --- -.. .
