@@ -1,0 +1,15 @@
+def speeding_ticket(speed, is_birthday):
+    normal_no_ticket_limit = 60
+    normal_small_ticket_limit = 80
+    birthday_offset = 5
+    if is_birthday:
+        normal_no_ticket_limit += birthday_offset
+        normal_small_ticket_limit += birthday_offset
+    if speed <= normal_no_ticket_limit:
+        return "No ticket"
+    elif speed <= normal_small_ticket_limit:
+        return "Small ticket"
+    else :
+        return "Big Ticket"
+print (speeding_ticket(60,False))
+print (speeding_ticket(75,False))
