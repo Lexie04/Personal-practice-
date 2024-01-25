@@ -1,0 +1,35 @@
+def fibonacci_sequence(max_value):
+    # Handle edge cases for 0 and negative inputs
+    if max_value <= 0:
+        raise ValueError("Input should be a positive integer.")
+
+    # Initialize the Fibonacci sequence list with the first two values
+    sequence = [0, 1]
+
+    # Generate Fibonacci sequence using a while loop
+    while sequence[-1] + sequence[-2] <= max_value:
+        next_value = sequence[-1] + sequence[-2]
+        sequence.append(next_value)
+
+    return sequence
+
+# Example Test Cases
+result1 = fibonacci_sequence(10)
+print(f"The Fibonacci sequence up to 10 is: {result1}")
+
+result2 = fibonacci_sequence(1)
+print(f"The Fibonacci sequence up to 1 is: {result2}")
+
+result3 = fibonacci_sequence(0) 
+print(f"The Fibonacci sequence up to 0 is: {result3}")
+ # This will raise a ValueError
+# Uncomment the line below to test negative input
+# result4 = fibonacci_sequence(-5)  # This will raise a ValueError
+
+
+
+# Test cases
+print(fibonacci_sequence(10))  # Expected output: [0, 1, 1, 2, 3, 5, 8]
+print(fibonacci_sequence(1))  # Expected output: [0, 1, 1]
+print(fibonacci_sequence(0))  # Expected output: [0]
+print(fibonacci_sequence(-5))  # Expected: Empty list or error message
