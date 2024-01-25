@@ -1,0 +1,22 @@
+def compound_interest_calculator(P, r, n, t):
+    # Validate input parameters
+    if P <= 0 or r < 0 or n <= 0 or t <= 0:
+        raise ValueError("All input parameters must be positive numbers.")
+
+    # Calculate compound interest using the formula A = P(1 + r/n)^(nt)
+    A = P * (1 + r/n)**(n*t)
+
+    return A
+
+# Example Test Cases
+result1 = compound_interest_calculator(1000, 0.05, 12, 5)
+print(f"The accumulated amount after 5 years is: {result1}")
+
+result2 = compound_interest_calculator(500, 0.07, 4, 10)
+print(f"The accumulated amount after 10 years is: {result2}")
+
+result3 = compound_interest_calculator(1500, 0.03, 6, 7)
+print(f"The accumulated amount after 7 years is: {result3}")
+
+    # Your code goes here
+    # Implement the compound interest calculation
