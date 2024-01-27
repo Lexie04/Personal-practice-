@@ -1,0 +1,25 @@
+my_string = "aavvccccddddeee"
+  
+  # converting the string to a set
+  temp_set = set(my_string)
+  
+  # stitching set into a string using join
+  new_string = ''.join(temp_set)
+  
+  print(new_string)
+list_of_strings = ['My', 'name', 'is', 'Chaitanya', 'Baweja']
+  
+  # Using join with the comma separator
+  print(','.join(list_of_strings))
+
+  # Output
+  # My,name,is,Chaitanya,Bawej
+my_string = "abcba"
+  
+  if my_string == my_string[::-1]:
+      print("palindrome")
+  else:
+      print("not palindrome")
+
+  # Output
+  # palindrom
