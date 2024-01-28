@@ -1,0 +1,20 @@
+def dumps(obj, *args, **kwargs):
+    """Helper function that wraps :func:`json.dumps`.
+
+    Recursive function that handles all BSON types including
+    :class:`~bson.binary.Binary` and :class:`~bson.code.Code`.
+
+    :Parameters:
+      - `json_options`: A :class:`JSONOptions` instance used to modify the
+        encoding of MongoDB Extended JSON types. Defaults to
+        :const:`DEFAULT_JSON_OPTIONS`.
+
+    .. versionchanged:: 3.4
+       Accepts optional parameter `json_options`. See :class:`JSONOptions`.
+
+    .. versionchanged:: 2.7
+       Preserves order when rendering SON, Timestamp, Code, Binary, and DBRef
+       instances.
+    """
+    json_options = kwargs.pop("json_options", DEFAULT_JSON_OPTIONS)
+    return json.dumps(_json_convert(obj, json_options), *args, **kwargs)
