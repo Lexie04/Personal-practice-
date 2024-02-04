@@ -1,0 +1,56 @@
+import matplotlib.pyplot as plt			# 导入模块
+
+plt.style.use('ggplot')					# 设置图形的显示风格
+fig=plt.figure(1)						# 新建一个 figure1
+fig=plt.figure(figsize=(12,6.5),dpi=100,facecolor='w')
+fig.patch.set_alpha(0.5)				# 设置透明度为 0.5
+font1 = {'weight' : 60, 'size' : 10}	# 创建字体，设置字体粗细和大小
+ax1.set_xlim(0,100)						# 设置 x 轴最大最小刻度
+ax1.set_ylim(-0.1,0.1)					# 设置 y 轴最大最小刻度
+plt.xlim(0,100)  						# 和上面效果一样
+plt.ylim(-1,1)
+ax1.set_xlabel('X name',font1)			# 设置 x 轴名字
+ax1.set_ylabel('Y name',font1)			# 设置 y 轴名字
+plt.xlabel('aaaaa')						# 设置 x 轴名字
+plt.ylabel('aaaaa')						# 设置 y 轴名字
+ax.yaxis.set_label_position("right") 	# y 轴标签右侧显示
+ax.yaxis.tick_right() 					# y 轴 ticks 右侧显示
+plt.grid(True)					 		# 增加格网
+plt.grid(axis="y")						# 只显示横向格网
+plt.grid(axis="x")						# 只显示纵向格网
+ax1.axhline(0, linestyle='--', color='gray')	# 只显示 y=0 这一条横向格网
+ax1.axvline(0, linestyle='--', color='k') 		# 只显示 x=0 这一条纵向格网
+ax=plt.gca()							# 获取当前axis,
+fig=plt.gcf()							# 获取当前figures
+plt.gca().set_aspect(1)					# 设置横纵坐标单位长度相等
+plt.text(x,y,string)					# 在 x,y 处加入文字注释
+plt.gca().set_xticklabels(labels, rotation=30, fontsize=16) # 指定在刻度上显示的内容
+plt.xticks(ticks, labels, rotation=30, fontsize=15)   # 上面两句合起来
+plt.legend(['Float'],ncol=1,prop=font1,frameon=False)	# 设置图例 列数、去掉边框、更改图例字体
+plt.title('This is a Title')			# 图片标题
+plt.show()								# 显示图片，没这行看不见图
+plt.savefig(path, dpi=300)				# 保存图片，dpi可控制图片清晰度，越高越好
+# 在保存图片前可不要 plt.show() 不然你保存的图片中啥也没有。
+plt.savefig(path, format='svg',dpi=300) # 保存为 svg 格式的矢量图
+# Python 不能保存 emf, 可以存成 svg，然后用 visio 打开，另存为 emf，再粘贴到 word 中
+plt.savefig(path, format='svg', bbox_inches='tight', pad_inches=0, dpi=300)
+# 也可以将图片保存为 pdf，一是 PDF 可以编辑，二是 pdf 也可以用别的软件保存为 emf，贴到 word 里面。
+plt.savefig(path, format='pdf', bbox_inches='tight', pad_inches=0, dpi=300)
+# 设置图片空白为最小，这很牛掰！！！
+plt.rcParams['font.sans-serif'] = ['SimHei']  	# 添加这条可以让图形显示中文
+mpl.rcParams['axes.unicode_minus'] = False		# 添加这条可以让图形显示负号
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')				#设置图片的右边框和上边框为不显示
+# 子图
+ax1=plt.subplot(3,1,1)
+ax1.scatter(time,data[:,1],s=5,color='blue',marker='o') # size, color, 标记
+ax1=plt.subplot(3,1,2)
+...
+# 控制图片边缘的大小
+plt.subplots_adjust(left=0, bottom=0, right=1, top=1, hspace=0.1,wspace=0.1)
+
+# 设置坐标刻度朝向，暂未成功
+plt.rcParams['xtick.direction'] = 'in'
+ax = plt.gca()
+ax.invert_xaxis() 
+ax.invert_yaxis()
