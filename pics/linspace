@@ -1,0 +1,67 @@
+import numpy as np
+  
+import matplotlib.pyplot as plt
+  
+# 为图像做标注
+x = np.linspace(-3,3,100)
+  
+y1 = x * 2
+  
+# y2 = x ** 2
+  
+  
+plt.figure(figsize=(6,6))
+  
+  
+plt.plot(x,y1,color='r',linewidth=1.0,linestyle='-')
+  
+  
+  
+  
+  
+# 给x轴加描述
+plt.xlabel("xxxxxx")
+# 给y轴加描述
+plt.ylabel("yyyyyy")
+  
+# ======================================================
+# 在x轴为x0，y轴为x0 * 2上画一个点，这个点的颜色是红色，大小为50，这个大小就是这个点显示的大小
+x0 = 0.5
+y0 = x0 * 2
+# scatter是画点的方法
+plt.scatter(x0,y0,color='g',s=50)
+  
+# 画线
+# 这条线是第一个点的坐标为[x0,y0],第二个点的坐标为[x0,-6]，后面就是设置线的风格，线的颜色，线的宽度
+  
+plt.plot([x0,x0],[y0,-6],color='k',linestyle='--',linewidth=1.0)
+  
+  
+  
+# 画箭头和描述
+  
+  
+# xy代表我们的点
+# xytext代码我们描述的位置，基于当前的点，在x轴+30，在y轴-30
+# r'$2*x={n}$是我们要显示的文字信息，格式必须要这样
+# textcoords表示作为起点
+# fontsize表示设置字体大小
+# arrowprops设置箭头
+# arrowstyle设置箭头的样式
+# connectionstyle设置风格.2表示弧度
+plt.annotate(r'$2*0.5={n}$'.format(n = y0),xy=(x0,y0),xytext=(+30,-30),textcoords='offset points',fontsize=10,arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
+  
+# 显示文字描述，从x轴为-1，y轴为2开始显示，$$中就是要显示的字符，这里如果要显示空格，则需要转义
+# fontdict设置字体
+plt.text(-1,2,r'$1\ 2\ 3\ 4$',fontdict={"size":16,"color":"r"})
+  
+# =========================================================
+  
+# 为图像加一个图例，用来对图像做说明
+  
+plt.show()
+————————————————
+
+                            版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
+                        
+原文链接：https://blog.csdn.net/w666666Wwwwwww/article/details/135477268
